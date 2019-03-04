@@ -15,7 +15,7 @@ public class BusDelivery extends Delivery {
                        final Bus bus,
                        final Date arrival) {
 
-        super(name, price, duration,arrival);
+        super(name, price, duration, arrival);
         this.startStorage = startStorage;
         this.finalStorage = finalStorage;
         this.bus = bus;

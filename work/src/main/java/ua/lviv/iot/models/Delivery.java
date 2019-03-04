@@ -12,7 +12,7 @@ public abstract class Delivery {
     public Delivery(final String name,
                     final int price,
                     final int duration,
-                    final Date arrival){
+                    final Date arrival) {
 
         this.price = price;
         this.duration = duration;

@@ -12,11 +12,11 @@ public class Main {
                 200,
                 200);
 
-        Plane ANT25 = new Plane(
+        Plane ant25 = new Plane(
                 "ANT25",
                 10000,
                 10);
-        Plane ANT20 = new Plane(
+        Plane ant20 = new Plane(
                 "ANT20",
                 5000,
                 10);
@@ -35,7 +35,7 @@ public class Main {
                 1220,
                 start,
                 end,
-                ANT25,
+                ant20,
                 new Date(
                         2019,
                         4,
@@ -46,7 +46,7 @@ public class Main {
                 200,
                 start,
                 end,
-                ANT20,
+                ant20,
                 new Date(
                         2019,
                         4,
@@ -64,7 +64,7 @@ public class Main {
                         4,
                         21));
 
-        BusDelivery DHL = new BusDelivery(
+        BusDelivery dhl = new BusDelivery(
                 "DHL",
                 200,
                 57,
@@ -101,13 +101,13 @@ public class Main {
                 60,
                 5,
                 2,
-                DHL);
+                dhl);
         ComputerMouse netscroll20 = new ComputerMouse(
                 "Genius netscroll 120",
                 5,
                 2,
                 1,
-                DHL);
+                dhl);
 
         Housewife marta = new Housewife(
                 "Marta",
@@ -128,12 +128,12 @@ public class Main {
         ArrayList<Client> amazonClients = new ArrayList<Client>();
         amazonClients.add(marta);
         amazonClients.add(nina);
-        Shop Amazon = new Shop(
-                "Amazon",
+        Shop amazon = new Shop(
+                "amazon",
                 "amazon.com",
                 amazonCatalog);
 
-        ShopManager amazonManager = new ShopManager(Amazon);
+        ShopManager amazonManager = new ShopManager(amazon);
 
         amazonManager.showShopCatalog();
         amazonManager.sortByDeliveryByPriceFromLowerToHigher();
@@ -157,10 +157,33 @@ public class Main {
  *
  *additional goods for another shops
  *
- * MacBook proRetina15 = new MacBook("Pro Retina 15",2250,15,17,fedEx);
- * MacBook airRetina13 = new MacBook("Air Retina 13",1200,13,13,plRailway);
- * Book garryPotter = new Book("Garry Potter",100,250,"Joahn Louling",ukrRailway);
- * ComputerMouse razerChampion = new ComputerMouse("Razor Champion", 100,10,2,DHL);
+ * MacBook proRetina15 = new MacBook(
+ * "Pro Retina 15",
+ * 2250,
+ * 15,
+ * 17,
+ * fedEx);
+ *
+ * MacBook airRetina13 = new MacBook(
+ * "Air Retina 13",
+ * 1200,
+ * 13,
+ * 13,
+ * plRailway);
+ *
+ * Book garryPotter = new Book(
+ * "Garry Potter",
+ * 100,
+ * 250,
+ * "Joahn Louling",
+ * ukrRailway);
+ *
+ * ComputerMouse razerChampion = new ComputerMouse(
+ * "Razor Champion",
+ * 100,
+ * 10,
+ * 2,
+ * DHL);
  *
  */
 /**

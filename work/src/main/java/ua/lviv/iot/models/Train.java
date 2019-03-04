@@ -1,14 +1,14 @@
 package ua.lviv.iot.models;
 
-public class Train{
+public class Train {
     private String mark;
-    private int railwayСarriageCount;
+    private int railwayCarriageCount;
 
     public Train(final String mark,
-                 final int railwayСarriageCount) {
+                 final int railwayCarriageCount) {
 
         this.mark = mark;
-        this.railwayСarriageCount = railwayСarriageCount;
+        this.railwayCarriageCount = railwayCarriageCount;
     }
 
     public String getMark() {
@@ -19,12 +19,12 @@ public class Train{
         this.mark = mark;
     }
 
-    public int getRailwayСarriageCount() {
-        return railwayСarriageCount;
+    public int getRailwayCarriageCount() {
+        return railwayCarriageCount;
     }
 
-    public void setRailwayСarriageCount(final int railwayСarriageCount) {
-        this.railwayСarriageCount = railwayСarriageCount;
+    public void setRailwayCarriageCount(final int railwayCarriageCount) {
+        this.railwayCarriageCount = railwayCarriageCount;
     }
 
     @Override
@@ -34,7 +34,7 @@ public class Train{
                 + mark
                 + '\''
                 + ", railwayСarriageCount="
-                + railwayСarriageCount
+                + railwayCarriageCount
                 + '}';
     }
 }

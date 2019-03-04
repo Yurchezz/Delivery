@@ -2,7 +2,7 @@ package ua.lviv.iot.models;
 
 import java.util.List;
 
-public class Shop{
+public class Shop {
     private String name;
     private String webSite;
     private List<Good> catalog;

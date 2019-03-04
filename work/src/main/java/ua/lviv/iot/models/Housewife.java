@@ -2,7 +2,7 @@ package ua.lviv.iot.models;
 
 public class Housewife extends Client {
 
-    HouseWifePreferences houseWifePreferences;
+    private HouseWifePreferences houseWifePreferences;
 
     public Housewife(final String name,
                      final Location home,
