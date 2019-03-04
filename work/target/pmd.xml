@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
+    version="6.8.0" timestamp="2019-03-04T12:54:57.262">
+<file name="C:\НУЛП\WinterSchool\DeliverMaven\work\src\main\java\ua\lviv\iot\models\Housewife.java">
+<violation beginline="5" endline="5" begincolumn="34" endcolumn="53" rule="UnusedPrivateField" ruleset="Best Practices" package="ua.lviv.iot.models" class="Housewife" variable="houseWifePreferences" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'houseWifePreferences'.
+</violation>
+</file>
+<file name="C:\НУЛП\WinterSchool\DeliverMaven\work\src\main\java\ua\lviv\iot\models\Main.java">
+<violation beginline="15" endline="15" begincolumn="15" endcolumn="19" rule="UnusedLocalVariable" ruleset="Best Practices" package="ua.lviv.iot.models" class="Main" method="main" variable="ant25" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedlocalvariable" priority="3">
+Avoid unused local variables such as 'ant25'.
+</violation>
+</file>
+</pmd>
