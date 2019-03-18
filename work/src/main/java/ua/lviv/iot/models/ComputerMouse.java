@@ -23,11 +23,11 @@ public class ComputerMouse extends Good {
         this.buttonCount = buttonCount;
     }
 
-    public int getCableLenth() {
+    public int getCableLength() {
         return cableLenth;
     }
 
-    public void setCableLenth(final int cableLenth) {
+    public void setCableLength(final int cableLenth) {
         this.cableLenth = cableLenth;
     }
 

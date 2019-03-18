@@ -15,6 +15,8 @@ public class Book extends Good {
         this.author = author;
     }
 
+
+
     public int getPageCount() {
         return pageCount;
     }

@@ -47,13 +47,15 @@ package ua.lviv.iot.models;
                  + ", | price = "
                  + price
                  + ", | arrival date = "
-                 + delivery.getArrival().getDay()
+                 + delivery.getArrival().getDate()
                  + "."
                  +  delivery.getArrival().getMonth()
                  + "."
                  + delivery.getArrival().getYear()
                  + ", | delivery duration = "
                  + delivery.getDuration()
+                 + ", | delivery price = "
+                 + delivery.getPrice()
                  + '}';
      }
  }

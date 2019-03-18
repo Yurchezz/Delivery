@@ -1,30 +1,39 @@
 package ua.lviv.iot.managers;
 
+import ua.lviv.iot.models.Client;
 import ua.lviv.iot.models.Good;
 import ua.lviv.iot.models.Shop;
 
+import java.nio.charset.CoderMalfunctionError;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ShopManager implements IDelivery {
     private Shop shop;
+    private List<Client> clients;
 
-    public ShopManager(final Shop shop) {
+
+    public ShopManager(final Shop shop, final List<Client> clients) {
         this.shop = shop;
+        this.clients = clients;
     }
-    public void findDeliveryType(final String deliveryName) {
+
+    public List<Good> findDeliveryType(final String deliveryName) {
+
+        List<Good> result = new ArrayList<Good>();
 
         for (int i = 0; i < shop.getCatalog().size(); i++) {
+
             if (shop.getCatalog().get(i).getDelivery().getName()
                     .equals(deliveryName)) {
 
-                System.out.println(shop.getCatalog().get(i).getName() + ": "
-                        + shop.getCatalog().get(i).getDelivery().getName());
-
+                    result.add(shop.getCatalog().get(i));
             }
         }
 
+        return result;
 
     }
     public List<Good> findGoodsRange(final int lower, final int higher) {
@@ -33,55 +42,61 @@ public class ShopManager implements IDelivery {
 
         for (int i = 0; i < shop.getCatalog().size(); i++) {
             if (higher > shop.getCatalog().get(i).getPrice()
-                    && shop.getCatalog().get(i).getPrice() < lower) {
+                    && shop.getCatalog().get(i).getPrice() > lower) {
                 result.add(shop.getCatalog().get(i));
             }
         }
-
         return result;
     }
 
 
-    public void sortByDeliveryByDurationFromLowerToHigher() {
-        Collections.sort(shop.getCatalog(),
-                    (Good o1, Good o2) ->
-                        o1.getDelivery()
-                                .getDuration() - o2.getDelivery()
-                                .getDuration());
+    public void sortByDeliveryDuration(final boolean switcher) {
+        if(switcher) {
+            shop
+                    .getCatalog()
+                    .sort(
+                            Comparator
+                                    .comparingInt(
+                                    (Good o1) ->
+                                            o1.getDelivery().getDuration()));
+        }else {
+            shop
+                    .getCatalog()
+                    .sort(
+                            Collections.reverseOrder(
+                                    Comparator.comparingInt((Good o) -> o.getDelivery().getDuration())));
+        }
+
     }
 
-    public void sortByArrivalDateFromLowerToHigher() {
-        Collections.sort(shop.getCatalog(),
-                    (Good o1, Good o2) ->
-                            o1.getDelivery()
-                                    .getArrival()
-                                    .compareTo(o2.getDelivery().getArrival()));
+    public void sortByArrivalDate(final boolean switcher) {
+        if(switcher) {
+            shop
+                    .getCatalog()
+                    .sort(Comparator.comparing((Good o) -> o.getDelivery().getArrival()));
+        }else {
+            shop
+                    .getCatalog()
+                    .sort((Good o1, Good o2) -> o2.getDelivery().getArrival().compareTo(o1.getDelivery().getArrival()));
+
+        }
     }
 
-    public void sortByDeliveryByPriceFromLowerToHigher() {
-        Collections.sort(shop.getCatalog(),
-                (Good o1, Good o2) ->
-                        o1.getPrice() - o2.getPrice());
+    public void sortByDeliveryPrice(final boolean switcher) {
+        if(switcher) {
+            shop.getCatalog()
+                    .sort(
+                            Comparator.comparingInt(
+                                    (Good o) -> o.getDelivery().getPrice()));
+        }else {
+            shop.getCatalog()
+                    .sort(
+                            (Good o1, Good o2)
+                                    -> o2.getDelivery().getPrice() - o1.getDelivery().getPrice());
+        }
+
     }
 
-    public void sortByDeliveryByDurationFromHigherToLower() {
-        Collections.sort(shop.getCatalog(),
-                Collections.reverseOrder(
-                        (Good o1, Good o2) ->
-                                o2.getDelivery().getDuration() - o1.getDelivery().getDuration()));
-    }
-
-    public void sortByArrivalDateFromHigherToLower() {
-        Collections.sort(shop.getCatalog(),
-                (Good o1, Good o2) ->
-                        o1.getDelivery().getArrival()
-                                .compareTo(o2.getDelivery().getArrival()));
-    }
-
-    public void sortByDeliveryByPriceFromHigherToLower() {
-        Collections.sort(shop.getCatalog(),
-                (Good o1, Good o2) -> o2.getPrice() - o1.getPrice());
-    }
     public void showShopCatalog() {
         System.out.println("----------------------"
                 + shop.getName()
@@ -95,6 +110,20 @@ public class ShopManager implements IDelivery {
                 + "---------------------------------------------");
     }
 
+    public Shop getShop() {
+        return shop;
+    }
 
+    public void setShop(Shop shop) {
+        this.shop = shop;
+    }
+
+    public List<Client> getClients() {
+        return clients;
+    }
+
+    public void setClients(List<Client> clients) {
+        this.clients = clients;
+    }
 
 }
