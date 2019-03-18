@@ -5,21 +5,15 @@ import ua.lviv.iot.models.Good;
 import java.util.List;
 
 public interface IDelivery {
-    void findDeliveryType(String deliveryType);
+    List<Good> findDeliveryType(final String deliveryType);
 
-    List<Good> findGoodsRange(int lower, int higher);
+    List<Good> findGoodsRange(final int lower, final int higher);
 
-    void sortByDeliveryByDurationFromLowerToHigher();
+    void sortByDeliveryDuration(final boolean switcher);
 
-    void sortByArrivalDateFromLowerToHigher();
+    void sortByArrivalDate(final boolean switcher);
 
-    void sortByDeliveryByPriceFromLowerToHigher();
-
-    void sortByDeliveryByDurationFromHigherToLower();
-
-    void sortByArrivalDateFromHigherToLower();
-
-    void sortByDeliveryByPriceFromHigherToLower();
+    void sortByDeliveryPrice(final boolean switcher);
 
     void showShopCatalog();
 }

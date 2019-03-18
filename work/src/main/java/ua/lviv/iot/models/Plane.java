@@ -22,11 +22,11 @@ public class Plane {
         this.mark = mark;
     }
 
-    public int getMaxHight() {
+    public int getMaxHigh() {
         return maxHight;
     }
 
-    public void setMaxHight(final int maxHight) {
+    public void setMaxHigh(final int maxHight) {
         this.maxHight = maxHight;
     }
 
