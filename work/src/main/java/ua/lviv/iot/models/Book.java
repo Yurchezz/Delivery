@@ -21,7 +21,7 @@ public class Book extends Good {
         return pageCount;
     }
 
-    public void setPageCount(int pageCount) {
+    public void setPageCount(final int pageCount) {
         this.pageCount = pageCount;
     }
 
@@ -29,8 +29,21 @@ public class Book extends Good {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(final String author) {
         this.author = author;
     }
 
+    @Override
+    public String getHeaders() {
+        return super.getHeaders()
+                + "PageCount,"
+                + "Author";
+    }
+
+    @Override
+    public String toCSV() {
+        return super.toCSV()
+                + "," + getPageCount()
+                + "," + getAuthor();
+    }
 }

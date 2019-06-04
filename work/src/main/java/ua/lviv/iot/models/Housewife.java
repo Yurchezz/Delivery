@@ -10,7 +10,4 @@ public class Housewife extends Client {
 
         super(name, home, cash);
     }
-
-
-
 }

@@ -1,3 +1,4 @@
+//use
 package ua.lviv.iot.managers;
 
 import org.junit.Assert;
@@ -8,7 +9,7 @@ import ua.lviv.iot.models.*;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class ShopManagerTest{
+public class ShopManagerTest {
 
     private Location start = new Location(
             100,
@@ -138,7 +139,7 @@ public class ShopManagerTest{
             amazonClients);
 
     @Before
-    public void setUp() throws Exception{
+    public void setUp() throws Exception {
 
         amazonClients.add(marta);
         amazonClients.add(nina);
@@ -154,7 +155,7 @@ public class ShopManagerTest{
     @Test
     public void findDeliveryType() {
 
-           Assert.assertEquals(proRetina13, testShopManager.findDeliveryType("UrkRailway").get(0));
+        Assert.assertEquals(proRetina13, testShopManager.findDeliveryType("UrkRailway").get(0));
 
     }
 
@@ -170,11 +171,11 @@ public class ShopManagerTest{
     @Test
     public void sortByDeliveryByDurationFromLowerToHigher() {
 
-            testShopManager.sortByDeliveryDuration(true);
+        testShopManager.sortByDeliveryDuration(true);
 
-            Assert.assertEquals(57, testShopManager.getShop().getCatalog().get(0).getDelivery().getDuration());
-            Assert.assertEquals(57, testShopManager.getShop().getCatalog().get(1).getDelivery().getDuration());
-            Assert.assertEquals(120, testShopManager.getShop().getCatalog().get(2).getDelivery().getDuration());
+        Assert.assertEquals(57, testShopManager.getShop().getCatalog().get(0).getDelivery().getDuration());
+        Assert.assertEquals(57, testShopManager.getShop().getCatalog().get(1).getDelivery().getDuration());
+        Assert.assertEquals(120, testShopManager.getShop().getCatalog().get(2).getDelivery().getDuration());
 
     }
 
@@ -183,9 +184,9 @@ public class ShopManagerTest{
 
         testShopManager.sortByArrivalDate(true);
 
-        Assert.assertEquals(new Date(2019,4,21), testShopManager.getShop().getCatalog().get(0).getDelivery().getArrival());
-        Assert.assertEquals(new Date(2019,4,22), testShopManager.getShop().getCatalog().get(1).getDelivery().getArrival());
-        Assert.assertEquals(new Date(2020,4,21), testShopManager.getShop().getCatalog().get(2).getDelivery().getArrival());
+        Assert.assertEquals(new Date(2019, 4, 21), testShopManager.getShop().getCatalog().get(0).getDelivery().getArrival());
+        Assert.assertEquals(new Date(2019, 4, 22), testShopManager.getShop().getCatalog().get(1).getDelivery().getArrival());
+        Assert.assertEquals(new Date(2020, 4, 21), testShopManager.getShop().getCatalog().get(2).getDelivery().getArrival());
 
     }
 
@@ -193,9 +194,10 @@ public class ShopManagerTest{
     public void sortByDeliveryPriceFromLowerToHigher() {
 
         testShopManager.sortByDeliveryPrice(true);
-        Assert.assertEquals(100,testShopManager.getShop().getCatalog().get(0).getDelivery().getPrice());
-        Assert.assertEquals(100,testShopManager.getShop().getCatalog().get(1).getDelivery().getPrice());
-        Assert.assertEquals(200,testShopManager.getShop().getCatalog().get(2).getDelivery().getPrice());
+
+        Assert.assertEquals(100, testShopManager.getShop().getCatalog().get(0).getDelivery().getPrice());
+        Assert.assertEquals(100, testShopManager.getShop().getCatalog().get(1).getDelivery().getPrice());
+        Assert.assertEquals(200, testShopManager.getShop().getCatalog().get(2).getDelivery().getPrice());
 
     }
 
@@ -214,9 +216,9 @@ public class ShopManagerTest{
 
         testShopManager.sortByArrivalDate(false);
 
-        Assert.assertEquals(new Date(2030,1,2), testShopManager.getShop().getCatalog().get(0).getDelivery().getArrival());
-        Assert.assertEquals(new Date(2030,1,2), testShopManager.getShop().getCatalog().get(1).getDelivery().getArrival());
-        Assert.assertEquals(new Date(2020,4,21), testShopManager.getShop().getCatalog().get(2).getDelivery().getArrival());
+        Assert.assertEquals(new Date(2030, 1, 2), testShopManager.getShop().getCatalog().get(0).getDelivery().getArrival());
+        Assert.assertEquals(new Date(2030, 1, 2), testShopManager.getShop().getCatalog().get(1).getDelivery().getArrival());
+        Assert.assertEquals(new Date(2020, 4, 21), testShopManager.getShop().getCatalog().get(2).getDelivery().getArrival());
 
     }
 

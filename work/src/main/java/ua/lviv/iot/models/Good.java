@@ -1,6 +1,6 @@
 package ua.lviv.iot.models;
 
- public abstract class Good {
+public abstract class Good {
     private String name;
     private int price;
     private Delivery delivery;
@@ -14,48 +14,63 @@ package ua.lviv.iot.models;
         this.delivery = delivery;
     }
 
-     public Delivery getDelivery() {
-         return delivery;
-     }
+    public Delivery getDelivery() {
+        return delivery;
+    }
 
-     public void setDelivery(final Delivery delivery) {
-         this.delivery = delivery;
-     }
+    public void setDelivery(final Delivery delivery) {
+        this.delivery = delivery;
+    }
 
-     public String getName() {
-         return name;
-     }
+    public String getName() {
+        return name;
+    }
 
-     public void setName(final String name) {
-         this.name = name;
-     }
+    public void setName(final String name) {
+        this.name = name;
+    }
 
-     public int getPrice() {
-         return price;
-     }
+    public int getPrice() {
+        return price;
+    }
 
-     public void setPrice(final int price) {
-         this.price = price;
-     }
+    public void setPrice(final int price) {
+        this.price = price;
+    }
 
-     @Override
-     public String toString() {
-         return "Good {"
-                 + " | name = '"
-                 + name
-                 + '\''
-                 + ", | price = "
-                 + price
-                 + ", | arrival date = "
-                 + delivery.getArrival().getDate()
-                 + "."
-                 +  delivery.getArrival().getMonth()
-                 + "."
-                 + delivery.getArrival().getYear()
-                 + ", | delivery duration = "
-                 + delivery.getDuration()
-                 + ", | delivery price = "
-                 + delivery.getPrice()
-                 + '}';
-     }
- }
+    @Override
+    public String toString() {
+        return "Good {"
+                + " | name = '"
+                + name
+                + '\''
+                + ", | price = "
+                + price
+                + ", | arrival date = "
+                + delivery.getArrival().getDate()
+                + "."
+                + delivery.getArrival().getMonth()
+                + "."
+                + delivery.getArrival().getYear()
+                + ", | delivery duration = "
+                + delivery.getDuration()
+                + ", | delivery price = "
+                + delivery.getPrice()
+                + '}';
+    }
+
+    public String getHeaders() {
+        return "Name,"
+                + "Price,"
+                + "Arrival,";
+    }
+
+    public String toCSV() {
+        return getName()
+                + "," + getPrice()
+                + "," + delivery.getArrival().getDate()
+                + "." + delivery.getArrival().getMonth()
+                + "." + delivery.getArrival().getYear();
+    }
+
+}

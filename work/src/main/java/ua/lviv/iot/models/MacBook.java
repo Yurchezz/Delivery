@@ -31,5 +31,17 @@ public class MacBook extends Good {
         this.manufactureYear = manufactureYear;
     }
 
+    @Override
+    public String getHeaders() {
+        return super.getHeaders()
+                + "displayDiagonal,"
+                + "manufactureYear";
+    }
 
+    @Override
+    public String toCSV() {
+        return super.toCSV()
+                + "," + getDisplayDiagonal()
+                + "," + getManufactureYear();
+    }
 }

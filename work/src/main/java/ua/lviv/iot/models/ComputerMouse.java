@@ -31,5 +31,17 @@ public class ComputerMouse extends Good {
         this.cableLenth = cableLenth;
     }
 
+    @Override
+    public String getHeaders() {
+        return super.getHeaders()
+                + "buttonCount,"
+                + "cableLength";
+    }
 
+    @Override
+    public String toCSV() {
+        return super.toCSV()
+                + "," + getButtonCount()
+                + "," + getCableLength();
+    }
 }
